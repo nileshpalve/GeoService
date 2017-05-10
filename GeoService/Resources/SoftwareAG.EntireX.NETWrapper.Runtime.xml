@@ -1,0 +1,1991 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SoftwareAG.EntireX.NETWrapper.Runtime</name>
+    </assembly>
+    <members>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.PARAMETER_DEFINITION_V3.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.PARAMETER_DEFINITION_V3)">
+            <summary>
+            ctor used for one element in array - inherited from the root node
+            </summary>
+            <param name="pd"> PARAMETER_DEFINTION of the root node </param>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.PARAMETER_DEFINITION_V3.parentIndex">
+            <summary>
+            get/set the parents' pd index in the array of pd's
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.PARAMETER_DEFINITION_V3.Type">
+            <summary>
+            get parameter type (remove direction and dimensions)
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.PARAMETER_DEFINITION_V3.ElementLength">
+            <summary>
+            get/set physical size in buffer.
+            size of buffer of groups/structs is calculated before writting the block
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.Date">
+            <summary>
+            Summary description for DBase.
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.Packed">
+            <summary>
+            Summary description for PBase.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute)">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute,System.Int32)">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.MarshalObject(System.IntPtr[],System.Object,System.UInt32@,System.UInt32)">
+            <summary>
+            the marshalling routine for the simple datatypes on client side.
+            Data and parameterdefinition are marshalled together.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.MarshalObject(System.IntPtr,System.Object)">
+            <summary>
+            the marshalling routine for the different datatypes
+            must be overwritten !
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.UnmarshalObject(System.IntPtr)">
+            <summary>
+            the unmarshalling routine for the different datatypes as elements of groups or arrays
+            must be overwritten !
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.CreateEmptyObject">
+            <summary>
+            creates a new empty object of the desired datatype.
+            used in CreateOutArray
+            must be overwritten !
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.MarshalPD(System.IntPtr[],System.UInt32@,System.UInt32,System.IntPtr)">
+            <summary>
+            marshal PARAMETER_DEFINTION_V3
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.MarshalHVData(System.IntPtr)">
+            <summary>
+            marshalls the handle into the erx buffer (used in AV,BV,KV)
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.MarshalArray(System.IntPtr[],System.Array,System.UInt32@,System.UInt32)">
+            <summary>
+            the marshalling routine for an array of simple datatypes on client side.
+            Data and parameterdefinition are marshalled together.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.CheckBounds(System.Array)">
+            <summary>
+            check the bounds of the array
+            </summary>
+            <param name="array"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.MarshalUnbounded(System.Array,System.IntPtr)">
+            <summary>
+            marshal an unbounded array of groups/structs
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.MarshalArrayElement(System.IntPtr,System.Object,System.Int32[])">
+            <summary>
+            unmarshals an array element of an unbounded array
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.UnmarshalArrayElement(System.IntPtr,System.Int32[])">
+            <summary>
+            unmarshals an array element of an unbounded array of structs/goups
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.GetBaseType(System.Type)">
+            <summary>
+            returns the base type of arrays and references
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.Array">
+            <summary>
+            get the array
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.BufferSize">
+            <summary>
+            get/set size in parameter buffer
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.IsUnboundedElement">
+            <summary>
+            parameter is an unbounded array of groups/structs
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.UnboundedSize">
+            <summary>
+            size used for unbounded arrays
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.Count">
+            <summary>
+            number of elements (= 1 for base types), overwritten by GroupBase
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.pdSize">
+            <summary>
+            get size of parameter definition
+            for simple types = sizeof PARAMETER_DEFININTION_V3
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.pd">
+            <summary>
+            the PARAMETER_DEFININTION_V3 has to be overwritten
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.pdIndex">
+            <summary>
+            returns the index in the CALL_INFORMATION_BLOCK
+            only used in Group
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.Attributes">
+            <summary>
+            parameter attributes (required for AV)
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.BaseType">
+            <summary>
+            the base type of the parameter
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.Holder">
+            <summary>
+            start address of ERX buffer
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Parameter.gc">
+            <summary>
+            ArrayList for the collection of ERX handles
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Packed.CreateEmptyObject">
+            <summary>
+            creates a new decimal
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Packed.Digits">
+            <summary>
+            calculate number of digits
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Packed.BufferSize">
+            <summary>
+            get size in parameter buffer
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Packed.UnboundedSize">
+            <summary>
+            size used for unbounded arrays
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Packed.pd">
+            <summary>
+            returns the PARAMETER_DEFININTION_V3, has to be overwritten
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Date.CreateEmptyObject">
+            <summary>
+            creates a new DateTime
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Date.ParmType">
+            <summary>
+            get size in parameter buffer
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Date.pd">
+            <summary>
+            returns the PARAMETER_DEFININTION_V3, has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.A">
+            <summary>
+            Summary description for IDLType A
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.A.CreateEmptyObject">
+            <summary>
+            creates an empty object of the correct type
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.A.pd">
+            <summary>
+            the PARAMETER_DEFININTION_V3 has to be overwritten
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.A.BaseType">
+            <summary>
+            the base type of the parameter
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.SERVER_ADDRESS">
+            <summary>
+            Summary description for SERVER_ADDRESS.
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.TERMINATE_SERVER">
+            <summary>
+            Summary description for SERVER_ADDRESS.
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.Construction">
+            <summary>
+            Summary description for Construction.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Construction.GroupArray(System.Type,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="t"></param>
+            <param name="dim1"></param>
+            <param name="dim2"></param>
+            <param name="dim3"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.Broker">
+            <summary>
+            EntireX Broker class.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.#ctor">
+            <summary>
+            Broker constructor for default host and default userName.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.#ctor(System.String)">
+            <summary>
+            Broker constructor for given host name and default user name.
+            </summary>
+            <param name="name">e.g "localhost:1971"</param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.#ctor(System.String,System.String)">
+            <summary>
+            Broker constructor for given host name and user name. 
+            </summary>
+            <param name="name">e.g "localhost:1971"</param>
+            <param name="userName">"ERX-USER"</param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Broker constructor for given host name, user name and token.
+            </summary>
+            <param name="name">e.g. "localhost:1971"</param>
+            <param name="userName">e.g. "ERX-USER"</param>
+            <param name="token">token</param>/>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.Logon">
+            <summary>
+            Logon to the Broker.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.Logon(System.String)">
+            <summary>
+            Logon to the Broker.
+            </summary>
+            <param name="password">password</param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.Logon(System.String,System.String)">
+            <summary>
+            Logon to the Broker.
+            </summary>
+            <param name="password">password</param>
+            <param name="newPassword">new password</param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.Logon(System.String,System.String,System.String)">
+            <summary>
+            Logon to the Broker.
+            </summary>
+            <param name="userName">user</param>/>
+            <param name="token">token</param>/>
+            <param name="password">password</param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.Logoff">
+            <summary>
+            Logoff from the Broker.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.GetSecurityToken">
+            <summary>
+            GetSecurityToken from the Broker.
+            Note: if ERX.GetSecurityToken() fails, ERX.Unregister() is called and an XException is thrown.
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.BrokerID">
+            <summary>
+            BrokerID property.
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.UserID">
+            <summary>
+            UserID property.
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.Password">
+            <summary>
+             Password property.
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.SecurityToken">
+            <summary>
+            SecurityToken property.
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.Token">
+            <summary>
+            Token propery.
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.EncryptionLevel">
+            <summary>
+            Encryption level property (0|1|2).
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.CompressionLevel">
+            <summary>
+            CompressionLevel property.
+            0: no compression,
+            1: compress with best speed,
+            6: default compression,
+            8: deflated,
+            9: best compression
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.ForceLogon">
+            <summary>
+            ForceLogon property.
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Broker.BrokerSecurity">
+            <summary>
+            BrokerSecurity
+            'N' : no security
+            'Y' : default EntireX security
+            'U' : user specific security
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.NU">
+            <summary>
+            Summary description for NBase.
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.Numeric">
+            <summary>
+            Summary description for NBase.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Numeric.CreateEmptyObject">
+            <summary>
+            creates a new decimal
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Numeric.BufferSize">
+            <summary>
+            get size in parameter buffer
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Numeric.pd">
+            <summary>
+            returns the PARAMETER_DEFININTION_V3, has to be overwritten
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.NU.pd">
+            <summary>
+            returns the PARAMETER_DEFININTION_V3, has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.Ref">
+            <summary>
+            Reference helper class
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.#ctor(System.DateTime@)">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.#ctor(System.Boolean@)">
+            <summary>
+            
+            </summary>
+            <param name="i"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.#ctor(System.Char@)">
+            <summary>
+            
+            </summary>
+            <param name="c"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.#ctor(System.Byte@)">
+            <summary>
+            
+            </summary>
+            <param name="b"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.#ctor(System.SByte@)">
+            <summary>
+            
+            </summary>
+            <param name="i"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.#ctor(System.Decimal@)">
+            <summary>
+            
+            </summary>
+            <param name="i"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.#ctor(System.Single@)">
+            <summary>
+            
+            </summary>
+            <param name="i"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.#ctor(System.Double@)">
+            <summary>
+            
+            </summary>
+            <param name="i"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.#ctor(System.Int16@)">
+            <summary>
+            
+            </summary>
+            <param name="i"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.#ctor(System.Int32@)">
+            <summary>
+            
+            </summary>
+            <param name="i"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.op_Implicit(SoftwareAG.EntireX.NETWrapper.Runtime.Ref)~System.Boolean">
+            <summary>
+            
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.op_Implicit(SoftwareAG.EntireX.NETWrapper.Runtime.Ref)~System.Char">
+            <summary>
+            
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.op_Implicit(SoftwareAG.EntireX.NETWrapper.Runtime.Ref)~System.Byte">
+            <summary>
+            
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.op_Implicit(SoftwareAG.EntireX.NETWrapper.Runtime.Ref)~System.SByte">
+            <summary>
+            
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.op_Implicit(SoftwareAG.EntireX.NETWrapper.Runtime.Ref)~System.Decimal">
+            <summary>
+            
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.op_Explicit(SoftwareAG.EntireX.NETWrapper.Runtime.Ref)~System.Single">
+            <summary>
+            
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.op_Implicit(SoftwareAG.EntireX.NETWrapper.Runtime.Ref)~System.Double">
+            <summary>
+            
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.op_Implicit(SoftwareAG.EntireX.NETWrapper.Runtime.Ref)~System.Int16">
+            <summary>
+            
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.op_Implicit(SoftwareAG.EntireX.NETWrapper.Runtime.Ref)~System.Int32">
+            <summary>
+            
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Ref.op_Implicit(SoftwareAG.EntireX.NETWrapper.Runtime.Ref)~System.DateTime">
+            <summary>
+            
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.EntireXVersionAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.EntireXVersionAttribute.version">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.EntireXVersionAttribute.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="version"></param>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.BrokerAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.BrokerAttribute.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.ServiceAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ServiceAttribute.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.LibraryAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.LibraryAttribute.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.NamespaceAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.NamespaceAttribute.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.ProgramAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ProgramAttribute.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.idlType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.IdlType)">
+            <summary>
+            
+            </summary>
+            <param name="t"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.IdlType,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="t"></param>
+            <param name="direction"></param>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.preDecimal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.postDecimal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.Unbounded">
+            <summary>
+            true for unbounded Arrays
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.Trim">
+            <summary>
+            true if trailing blanks should be truncated
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.Length">
+            <summary>
+            used for A, AV, B, BV, N, NU , P, PU , D, T
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.Dim">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.Dim2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.Dim3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.Dimensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.Elements">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.CallInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.Id">
+            <summary>
+            index in group/struct
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.IsArray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.IsIn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.IsOut">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.IsField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.BufferSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.Parameter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.Info">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.ClientSide">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.ServiceHolder">
+            <summary>
+            Summary description for ServiceHolder.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ServiceHolder.#ctor">
+            <summary>
+            default ctor, creates a new Service.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ServiceHolder.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.Broker)">
+            <summary>
+            ctor Creates a new Service in conjunction with the given Broker.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ServiceHolder.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.Service)">
+            <summary>
+            ctor uses the given Service.
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.ServiceHolder.service">
+            <summary>
+            get/set service
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.ServiceHolder.Encryption">
+            <summary>
+            get/set encryption level of the service
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.PU">
+            <summary>
+            Summary description for PBase.
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.PU.pd">
+            <summary>
+            returns the PARAMETER_DEFININTION_V3, has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.F8">
+            <summary>
+            Summary description for F8Base.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.F8.CreateEmptyObject">
+            <summary>
+            creates a new float
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.F8.BufferSize">
+            <summary>
+            get size in parameter buffer
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.F8.pd">
+            <summary>
+            returns the PARAMETER_DEFININTION_V3, has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator">
+            <summary>
+            base class
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.CreateArrayEnumerator(System.Array,SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute,System.IntPtr)">
+            <summary>
+            creates a new ArrayEnumerator
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.CreateArrayEnumerator(System.Array,SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute)">
+            <summary>
+            creates a new ArrayEnumerator on clientside 
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.CreateArrayEnumerator(SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute,System.IntPtr)">
+            <summary>
+            creates a new ArrayEnumerator on serverside
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.#ctor(System.Array,SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute,System.IntPtr)">
+            <summary>
+            base ctor
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.#ctor(System.Array,SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute)">
+            <summary>
+            base ctor on clientside
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute,System.IntPtr)">
+            <summary>
+            ctor for serverside unmarshalling
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.ReUse(System.IntPtr,System.Array)">
+            <summary>
+            reuse the enumerator
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.MoveNext">
+            <summary>
+            move to next record
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.Reset">
+            <summary>
+            resets enumeration
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.Position">
+            <summary>
+            returns record position
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.CheckBounds">
+            <summary>
+            (re)calculate the array bounds
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.PositionToString">
+            <summary>
+            returns the actual position in the enumerator as string of the
+            form [x,y,z]
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.Finalize">
+            <summary>
+            remove memory leaks
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.hArray">
+            <summary>
+            returns Current element
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.Array">
+            <summary>
+            set/get Array for enumeration
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.Current">
+            <summary>
+            returns Current element
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator.Bounds">
+            <summary>
+            returns Current element
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator1">
+            <summary>
+            unbounded array with one dimension
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator1.#ctor(System.Array,SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute,System.IntPtr)">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator1.#ctor(System.Array,SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute)">
+            <summary>
+            ctor for clientside marshalling
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator1.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute,System.IntPtr)">
+            <summary>
+            ctor for serverside unmarshalling
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator1.MoveNext">
+            <summary>
+            move to next record
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator1.Reset">
+            <summary>
+            resets enumeration
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator1.CheckBounds">
+            <summary>
+            (re)calculate the array bounds
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator1.PositionToString">
+            <summary>
+            returns the actual position in the enumerator as string of the
+            form [position[0]]
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator2">
+            <summary>
+            regular unbounded array with two dimensions [,]
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator2.#ctor(System.Array,SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute,System.IntPtr)">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator2.#ctor(System.Array,SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute)">
+            <summary>
+            ctor for clientside marshalling
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator2.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute,System.IntPtr)">
+            <summary>
+            ctor for serverside unmarshalling
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator2.MoveNext">
+            <summary>
+            move to next record
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator2.Reset">
+            <summary>
+            resets enumeration
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator2.CheckBounds">
+            <summary>
+            (re)calculate the array bounds
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator2.PositionToString">
+            <summary>
+            returns the actual position in the enumerator as string of the
+            form [position[0],position[1]]
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator3">
+            <summary>
+            regular unbounded array with three dimensions [,,]
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator3.#ctor(System.Array,SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute,System.IntPtr)">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator3.#ctor(System.Array,SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute)">
+            <summary>
+            ctor for clientside marshalling
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator3.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute,System.IntPtr)">
+            <summary>
+            ctor for serverside unmarshalling
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator3.MoveNext">
+            <summary>
+            move to next record
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator3.Reset">
+            <summary>
+            resets enumeration
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator3.CheckBounds">
+            <summary>
+            (re)calculate the array bounds
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayEnumerator3.PositionToString">
+            <summary>
+            returns the actual position in the enumerator as string of the
+            form [position[0],position[1],position[2]]
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.L">
+            <summary>
+            Summary description for LBase.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.L.CreateEmptyObject">
+            <summary>
+            creates a new boolean
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.L.BufferSize">
+            <summary>
+            get size in parameter buffer
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.L.pd">
+            <summary>
+            returns the PARAMETER_DEFININTION_V3, has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.AV">
+            <summary>
+            Summary description for AVBase.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.AV.AllocateString(System.IntPtr,System.Byte[])">
+            <summary>
+            allocates the string in erx buffer
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.AV.MarshalArrayElement(System.IntPtr,System.Object,System.Int32[])">
+            <summary>
+            marshals an array element of an unbounded array
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.AV.UnmarshalArrayElement(System.IntPtr,System.Int32[])">
+            <summary>
+            unmarshals an array element of an unbounded array
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.AV.UnboundedSize">
+            <summary>
+            size used for unbounded arrays
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.AV.Attributes">
+            <summary>
+            parameter attributes (ERX_ATTR_STRING)
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.AV.BufferSize">
+            <summary>
+            get size in parameter buffer
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.AV.pd">
+            <summary>
+            the PARAMETER_DEFININTION_V3 has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.K">
+            <summary>
+            Summary description for IDLType K
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.K.pd">
+            <summary>
+            the PARAMETER_DEFININTION_V3 has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.CallInformationBlock">
+            <summary>
+            base ctor
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.CallInformationBlock.#ctor(System.Text.Encoding,System.String,System.Reflection.MethodInfo,System.Object[])">
+            <summary>
+            ctor for client side wrapping
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.CallInformationBlock.#ctor">
+            <summary>
+            ctor for server side wrapping
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.CallInformationBlock.GetParameterDescription(System.String,System.String)">
+            <summary>
+            calls the server stub
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.CallInformationBlock.CallServer(System.String,System.String,System.IntPtr)">
+            <summary>
+            calls the server stub
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.CallInformationBlock.CharacterEncoding">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.CallInformationBlock.ClientSide">
+            <summary>
+            true for client side wrapping, false for server side wrapping
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.BV">
+            <summary>
+            Summary description for BBase.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.BV.MarshalArrayElement(System.IntPtr,System.Object,System.Int32[])">
+            <summary>
+            marshals an array element of an unbounded array
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.BV.UnmarshalArrayElement(System.IntPtr,System.Int32[])">
+            <summary>
+            unmarshals an array element of an unbounded array
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.BV.UnboundedSize">
+            <summary>
+            size used for unbounded arrays
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.BV.BufferSize">
+            <summary>
+            get size in parameter buffer
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.BV.pd">
+            <summary>
+            the PARAMETER_DEFININTION_V3 has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.A1">
+            <summary>
+            Summary description for IDLType A
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.LibraryCollection">
+            <summary>
+            Summary description for LibraryCollection.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.LibraryCollection.#ctor">
+            <summary>
+            ctor initializes with hashtable size of 16 
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.MethodCollection">
+            <summary>
+            container for all Methods in an library
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.MethodCollection.#ctor(System.String,System.Object)">
+            <summary>
+            ctor for a new MethodCollection (library)
+            </summary>
+            <param name="name"></param>
+            <param name="library"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.MethodCollection.GetMethod(System.String)">
+            <summary>
+            returns the method for a given Name
+            </summary>
+            <param name="methodName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.MethodHolder">
+            <summary>
+            Holds the information for the method
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.MethodHolder.#ctor">
+            <summary>
+            ctor for CreateInstance
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.MethodHolder.Finalize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.MethodHolder.#ctor(System.String,System.Object,System.Reflection.MethodInfo)">
+            <summary>
+            ctor
+            </summary>
+            <param name="name"></param>
+            <param name="serverClass"></param>
+            <param name="method"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.MethodHolder.GetParameterDescription">
+            <summary>
+            returns the ParameterDescription for the method
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.MethodHolder.GetParameterCount">
+            <summary>
+            returns the number of parameters in the parameter defintion block
+            for the method
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.MethodHolder.Library">
+            <summary>
+            returns the corresponding library
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.MethodHolder.Method">
+            <summary>
+            returns the method
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.MethodHolder.Name">
+            <summary>
+            return the method's name
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.MethodHolder.ParameterDescription">
+            <summary>
+            get/set the ParameterDescription for the method
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.MethodHolder.ParameterCount">
+            <summary>
+            get/set the number of parameters in the parameter defintion block
+            for the method
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.B1">
+            <summary>
+            Summary description for BBase.
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.B">
+            <summary>
+            Summary description for BBase.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.B.CreateEmptyObject">
+            <summary>
+            creates a new byte(array)
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.B.pd">
+            <summary>
+            the PARAMETER_DEFININTION_V3 has to be overwritten
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.B1.CreateEmptyObject">
+            <summary>
+            creates a new byte(array)
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.Struct">
+            <summary>
+            Summary description for GroupBase.
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.Group">
+            <summary>
+            Summary description for GroupBase.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Group.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute,System.Type,SoftwareAG.EntireX.NETWrapper.Runtime.PARAMETER_DEFINITION_V3)">
+            <summary>
+            ctor used for the creation of one element in an array
+            </summary>
+            <param name="sendAs">SendAsAttributte of the root</param>
+            <param name="t">the object type</param>
+            <param name="PD">PARAMETER_DEFINITION_V3 of the root</param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Group.MarshalObject(System.IntPtr,System.Object)">
+            <summary>
+            the marshalling routine for the different datatypes
+            must be overwritten !
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Group.UnmarshalObject(System.IntPtr)">
+            <summary>
+            the unmarshalling routine for the different datatypes as elements of groups or arrays
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Group.UnmarshalArrayElement(System.IntPtr,System.Int32[])">
+            <summary>
+            unmarshals an array element of an unbounded array of structs/goups
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Group.MarshalArrayElement(System.IntPtr,System.Object,System.Int32[])">
+            <summary>
+            unmarshals an array element of an unbounded array
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Group.UnmarshalUnbounded(System.Array,System.IntPtr)">
+            <summary>
+            unmarshal an unbounded array of groups/structs
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Group.MarshalPD(System.IntPtr[],System.UInt32@,System.UInt32,System.IntPtr)">
+            <summary>
+            marshal PARAMETER_DEFINTION_V3
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Group.CreateEmptyObject">
+            <summary>
+            creates a new empty object of the desired group/struct.
+            used in CreateOutArray
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Group.pd">
+            <summary>
+            the PARAMETER_DEFININTION_V3 has to be overwritten
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Group.BaseType">
+            <summary>
+            the base type of the parameter
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Group.Count">
+            <summary>
+            number of elements (1 for the group itself + elements.Count)
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Group.BufferSize">
+            <summary>
+            number of elements (1 for the group itself + elements.Count)
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Struct.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.SendAsAttribute,System.Type,SoftwareAG.EntireX.NETWrapper.Runtime.PARAMETER_DEFINITION_V3)">
+            <summary>
+            ctor used for the creation of one element in an array
+            </summary>
+            <param name="sendAs">SendAsAttributte of the root</param>
+            <param name="t">the object type</param>
+            <param name="PD">PARAMETER_DEFINITION_V3 of the root</param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Struct.CreateEmptyObject">
+            <summary>
+            creates a new empty object of the desired group/struct.
+            used in CreateOutArray
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Struct.pd">
+            <summary>
+            the PARAMETER_DEFININTION_V3 has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.UV">
+            <summary>
+            Summary description for AVBase.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.UV.AllocateString(System.IntPtr,System.Byte[])">
+            <summary>
+            allocates the string in erx buffer
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.UV.UnmarshalArrayElement(System.IntPtr,System.Int32[])">
+            <summary>
+            unmarshals an array element of an unbounded array
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.UV.pd">
+            <summary>
+            the PARAMETER_DEFININTION_V3 has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.F4">
+            <summary>
+            Summary description for F4Base.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.F4.CreateEmptyObject">
+            <summary>
+            creates a new float
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.F4.BufferSize">
+            <summary>
+            get size in parameter buffer
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.F4.pd">
+            <summary>
+            returns the PARAMETER_DEFININTION_V3, has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.ByteHolder">
+            <summary>
+            Summary description for ByteHolder.
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayHolder">
+            <summary>
+            Summary description for ByteHolder.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayHolder.#ctor">
+            <summary>
+            default constructor
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayHolder.#ctor(System.Array)">
+            <summary>
+            constructor for 1-DIM byte array
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.ArrayHolder.array">
+            <summary>
+            get/set the byte array
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ByteHolder.#ctor">
+            <summary>
+            constructor for out parameter
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ByteHolder.#ctor(System.Array)">
+            <summary>
+            constructor for byte arrays
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.ByteHolder.GetArray">
+            <summary>
+            get the byte array
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.I4">
+            <summary>
+            Summary description for I4Base.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.I4.CreateEmptyObject">
+            <summary>
+            creates a new short
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.I4.BufferSize">
+            <summary>
+            get size in parameter buffer
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.I4.pd">
+            <summary>
+            returns the PARAMETER_DEFININTION_V3, has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.ERX">
+            <summary>
+            Wrapper class for erx.dll
+            </summary>	
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.Time">
+            <summary>
+            Summary description for TBase.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Time.CreateEmptyObject">
+            <summary>
+            creates a new DateTime
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Time.BufferSize">
+            <summary>
+            get size in parameter buffer
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Time.pd">
+            <summary>
+            returns the PARAMETER_DEFININTION_V3, has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType">
+            <summary>
+            Type definitions in EntireX IDL File
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.A">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.B">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.D">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.F4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.F8">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.I1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.I2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.I4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.K">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.L">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.N">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.NU">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.P">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.PU">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.T">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.AV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.BV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.KV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.Group">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.Struct">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.A1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.B1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.U">
+            <summary>
+            Unicode string with fixed lenght
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.IdlType.UV">
+            <summary>
+            Unicode string with variable lenght
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.XException">
+            <summary>
+            EntireX Exception
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.XException.errorCode">
+            <summary>
+            contains the error code - internal
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.XException.Message">
+            <summary>
+            contains the error message
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.U">
+            <summary>
+            Summary description for IDLType A
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.U.CreateEmptyObject">
+            <summary>
+            creates an empty object of the correct type
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.U.BufferSize">
+            <summary>
+            get/set size in parameter buffer
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.U.pd">
+            <summary>
+            the PARAMETER_DEFININTION_V3 has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.LocationTransparency">
+            <summary>
+            Class for LocationTransparency
+            Wrapper class for ERX call ERXLocationTransparency(),
+            </summary>	
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.LocationTransparency.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Class for LocationTransparency
+            Wrapper class for ERX call ERXLocationTransparency(),
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.LocationTransparency.GetszEtbidName">
+            <summary>
+            Get-function for "szEtbidName"
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.LocationTransparency.EtbidName">
+            <summary>
+            Real Broker ID (ReadOnly)
+            </summary>	
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.LocationTransparency.ClassName">
+            <summary>
+            Real Class (ReadOnly)
+            </summary>	
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.LocationTransparency.ServerName">
+            <summary>
+            Real Server (ReadOnly)
+            </summary>	
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.LocationTransparency.ServiceName">
+            <summary>
+            Real Service ID (ReadOnly)
+            </summary>	
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.LocationTransparency.Trinity">
+            <summary>
+            Return Trinity of Class/Server/Service  (ReadOnly)
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.I2">
+            <summary>
+            Summary description for I2Base.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.I2.CreateEmptyObject">
+            <summary>
+            creates a new short
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.I2.BufferSize">
+            <summary>
+            get size in parameter buffer
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.I2.pd">
+            <summary>
+            returns the PARAMETER_DEFININTION_V3, has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.I1">
+            <summary>
+            Summary description for I1Base.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.I1.CreateEmptyObject">
+            <summary>
+            creates a new sbyte
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.I1.pd">
+            <summary>
+            returns the PARAMETER_DEFININTION_V3, has to be overwritten
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.I1.BufferSize">
+            <summary>
+            get size in parameter buffer
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.Compress">
+            <summary>
+            Compress enumeration
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.Compress.NO_COMPRESSION">
+            <summary>
+            No compression
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.Compress.BEST_SPEED">
+            <summary>
+            Best speed compression
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.Compress.Two">
+            <summary>
+            Level two compression
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.Compress.Three">
+            <summary>
+            Level three compression
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.Compress.Four">
+            <summary>
+            Level four compression
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.Compress.Five">
+            <summary>
+            Level five compression
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.Compress.DEFAULT_COMPRESSION">
+            <summary>
+            Default compression
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.Compress.Seven">
+            <summary>
+            Level seven compression
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.Compress.DEFLATED">
+            <summary>
+            Deflated compression
+            </summary>
+        </member>
+        <member name="F:SoftwareAG.EntireX.NETWrapper.Runtime.Compress.BEST_COMPRESSION">
+            <summary>
+            Best compression
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.CALL_INFORMATION_BLOCK">
+            <summary>
+            Summary description for CALL_INFORMATION_BLOCK.
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.CALL_INFORMATION_BLOCK.#ctor">
+            <summary>
+            default ctor
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.CALL_INFORMATION_BLOCK.Finalize">
+            <summary>
+            free paramter defintion area and buffer for CALL_INFORMATION_BLOCK
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.Service">
+            <summary>
+            EntireX Service class
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Service.#ctor">
+            <summary>
+            Default Service constructor with default Broker, Class/Server/Service and library
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Service.#ctor(System.String)">
+            <summary>
+            Service constructor with default Broker and Class/Server/Service
+            </summary>
+            <param name="libraryName">library name</param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Service.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.Broker)">
+            <summary>
+            Service constructor with default Class/Server/Service and library name
+            </summary>
+            <param name="broker">Broker instance</param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Service.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.Broker,System.String)">
+            <summary>
+            Service constructor with default library name
+            </summary>
+            <param name="broker">Broker instance</param>
+            <param name="trinity">e.g. RPC/SRV1/CALLNAT</param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Service.#ctor(SoftwareAG.EntireX.NETWrapper.Runtime.Broker,System.String,System.String)">
+            <summary>
+            Service constructor
+            </summary>
+            <param name="broker">Broker instance</param>
+            <param name="trinity">e.g. RPC/SRV1/CALLNAT</param>
+            <param name="libraryName">library name</param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Service.Finalize">
+            <summary>
+            Finalize
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Service.UserIDAndPassword(System.String,System.String)">
+            <summary>
+            Set RPC user ID and password
+            </summary>
+            <param name="user"></param>
+            <param name="password"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Service.Credentials(System.String,System.String)">
+            <summary>
+            Set RPC user and password - deprecated
+            </summary>
+            <param name="user"></param>
+            <param name="password"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Service.OpenConversation">
+            <summary>
+            Open a Conversation
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Service.CloseConversation">
+            <summary>
+            Close a conversation with backout
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Service.CloseConversationCommit">
+            <summary>
+            Close a conversation with commit
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Service.Invoke(System.String,System.String,System.Object[])">
+            <summary>
+            Invoke the service with the library and method name
+            </summary>
+            <param name="library"/>
+            <param name="method"/>
+            <param name="objArray"/>
+            <returns>object returnValue or null</returns>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Service.Send(System.Reflection.MethodInfo,System.Object[])">
+            <summary>
+            Send an RPC call
+            </summary>
+            <param name="methodInfo"></param>
+            <param name="objArray"></param>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Service.TerminateServer(System.Int32,System.String@)">
+            <summary>
+            Terminate Server
+            </summary>
+            <param name="ShutdownCommand"></param>
+            <param name="Message"></param>
+            <returns name="ERXeReturnCode"></returns>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Service.Broker">
+            <summary>
+            Broker property
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Service.Library">
+            <summary>
+            Library property
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Service.ServerAddress">
+            <summary>
+            ServerAddress property
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Service.RPCUserID">
+            <summary>
+            RPCUserID property
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Service.RPCPassword">
+            <summary>
+            RPCPassword property
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Service.CharacterEncoding">
+            <summary>
+            CharacterEncoding property
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Service.Locale">
+            <summary>
+             Locale property
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Service.NaturalLogon">
+            <summary>
+            NaturalLogon property
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.Service.Timeout">
+            <summary>
+            Timeout property (default: 50 sec)
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.KV">
+            <summary>
+            Summary description for AVBase.
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.KV.Attributes">
+            <summary>
+            parameter attributes (required for KV)
+            </summary>
+        </member>
+        <member name="P:SoftwareAG.EntireX.NETWrapper.Runtime.KV.pd">
+            <summary>
+            the PARAMETER_DEFININTION_V3 has to be overwritten
+            </summary>
+        </member>
+        <member name="T:SoftwareAG.EntireX.NETWrapper.Runtime.Config">
+            <summary>
+            Class Config - App.config configuration settings
+            Reads EntireX configuration settings from the application's
+            config file <it>appname</it>.exe.config. The configuration settings
+            are assumed to be in a section "EntireX".
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Config.#ctor">
+            <summary>
+            Config constructor
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Config.#ctor(System.String)">
+            <summary>
+            Config constructor
+            <parameter name="sectionName"></parameter>
+            </summary>
+        </member>
+        <member name="M:SoftwareAG.EntireX.NETWrapper.Runtime.Config.getConfig(System.String,System.String)">
+            <summary>
+            getConfig - get configuration parameter value
+            <parameter name="name"></parameter>
+            <parameter name="defaultValue"></parameter>
+            </summary>
+            
+        </member>
+    </members>
+</doc>

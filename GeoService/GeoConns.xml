@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<ArrayOfGeoConn xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <GeoConn>
+    <Broker>MTPRAWVCDCPZF01.csc.nycnet:1971</Broker>
+    <Server>Z030P/GEOXSERVER/GEOSUPPORTSERVICE</Server>
+  </GeoConn>
+
+
+  <GeoConn>
+    <Broker>mspwvd-dcpdb02.csc.nycnet:1971</Broker>
+    <Server>W030P/GEOXSERVER/GEOSUPPORTSERVICE</Server>
+  </GeoConn>
+
+  <GeoConn>
+    <Broker>msswvd-dcpdb02.csc.nycnet:1971</Broker>
+    <Server>W030S/GEOXSERVER/GEOSUPPORTSERVICE</Server>
+  </GeoConn>
+
+
+  <GeoConn>
+    <Broker>MTDEVWVCDCPZF03.csc.nycnet:1971</Broker>
+    <Server>Z030A/GEOXSERVER/GEOSUPPORTSERVICE</Server>
+  </GeoConn>
+
+  <GeoConn>
+    <Broker>geox.dcp.nycnet:1971</Broker>
+    <Server>L030P/GEOXSERVER/GEOSUPPORTSERVICE</Server>
+  </GeoConn>
+  <GeoConn>
+    <Broker>mvsp.nycnet:4001</Broker>
+    <Server>P030A/GEOXSERVER/GEOSUPPORTSERVICE</Server>
+  </GeoConn>
+  <GeoConn>
+    <Broker>mvsp.nycnet:4036</Broker>
+    <Server>P030A/GEOXSERVER/GEOSUPPORTSERVICE</Server>
+  </GeoConn>
+  <GeoConn>
+    <Broker>mvsp.nycnet:4000</Broker>
+    <Server>T030A/GEOXSERVER/GEOSUPPORTSERVICE</Server>
+  </GeoConn>
+
+</ArrayOfGeoConn>
+
